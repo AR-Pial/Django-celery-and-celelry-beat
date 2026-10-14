@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_celery_beat',
     'core',
 ]
 
@@ -124,6 +125,7 @@ CELERY_TIMEZONE = "Asia/Dhaka"
 
 CELERY_ENABLE_UTC = True
 
+# Settings-based Scheduler using settings.py
 # CELERY_BEAT_SCHEDULE = {
 #     "say-hello-every-10-seconds": {
 #         "task": "core.tasks.say_hello",
@@ -131,7 +133,7 @@ CELERY_ENABLE_UTC = True
 #     },
 # }
 
-
+# Settings-based Scheduler running
 CELERY_BEAT_SCHEDULE = {
     "say-hello-every-day-at-9am": {
         "task": "core.tasks.say_hello",
